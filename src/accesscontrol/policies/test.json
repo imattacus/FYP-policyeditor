@@ -1,0 +1,41 @@
+{
+    "id": "0",
+    "name": "test_root",
+    "description": "Root of the test policy",
+    "target":{},
+    "obligations":[],
+    "algorithm": "firstApplicable",
+    "children": [
+        {
+            "id": "0_0",
+            "name": "test_owner_has_access",
+            "description": "Policy for owner has access",
+            "target":{"allOf": [
+                {"subjectHasAttribute": "test_attribute"},
+                {"resourceHasAttribute": "test_attribute"}
+            ]},
+            "obligations":[],
+            "algorithm": "denyOverrides",
+            "children": [
+                {
+                    "id": "0_0_0",
+                    "name": "test_rule1",
+                    "description": "Permit if the devices owner is the current subject",
+                    "target":{"subjectHasAttribute": "test_attribute"},
+                    "condition":{"comparator":"equalTo", "param1":{"subjectAttribute": "user_id"}, "param2": {"resourceAttribute": "device_owner_id"}},
+                    "effect":"Permit",
+                    "obligations":[]
+                }
+            ]
+        },
+        {
+            "id": "0_1",
+            "name": "test_rule",
+            "description": "Test rule, permit if the user has attribute test_attribute",
+            "target": {"subjectHasAttribute": "test_attribute"},
+            "condition": {},
+            "effect": "Deny",
+            "obligations": []
+        }
+    ]
+}

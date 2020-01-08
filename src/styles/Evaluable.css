@@ -1,0 +1,83 @@
+.evaluable-view {
+    margin: 2px;
+    background-color: white;
+}
+
+.evaluable-container {
+    margin: 2px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+.evaluable-container.true {
+    background-color: greenyellow;
+}
+
+.evaluable-container.false {
+    background-color: red;
+}
+
+.evaluable-container.hover {
+    background-color: yellow;
+}
+
+.empty-placeholder.hover {
+    background-color: yellow;
+}
+
+.eval-detail-label.hover {
+    background-color: yellow;
+}
+
+.eval-op-label {
+    align-self: flex-start;
+    font-size: 0.8em;
+    margin-left:1px;
+}
+
+
+.eval-op-label.comparator {
+    display: table;
+    margin: 0 auto;
+}
+
+.eval-op-label.combinator {
+    display: table;
+    margin: 0 auto;
+}
+
+.empty-placeholder {
+    border: 1px dashed red;
+    margin: 2px;
+}
+
+.empty-placeholder > .eval-detail-label {
+    display: table;
+    margin: 0 auto;
+}
+
+.eval-detail-label {
+    text-align: center;
+}
+
+.evaluable-icons {
+    float: right;
+}
+
+.evaluable-icons > i{
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.draggable-component {
+    display: inline-block;
+    border: 1px dashed gray;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    cursor: move;
+}
+
+
